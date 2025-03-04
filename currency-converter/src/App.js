@@ -45,7 +45,7 @@ function App() {
     const price = value / ratesRef.current[fromCurrencyType];
     const result = price * ratesRef.current[toCurrencyType];
     setFromPrice(value);
-    setToPrice(result);
+    setToPrice(parseFloat(result.toFixed(6)));
   }
   function onToPriceChange(value) {
     if (fromCurrencyType === toCurrencyType) {
@@ -56,7 +56,7 @@ function App() {
     const result =
       (ratesRef.current[fromCurrencyType] / ratesRef.current[toCurrencyType]) *
       value;
-    setFromPrice(result);
+    setFromPrice(parseFloat(result.toFixed(6)));
     setToPrice(value);
   }
 
